@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Pharmacology</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Pharmacology</h1>
+        <h2>History</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sign-Up</a></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="intro.html">Introduction</a></li>
+                <li><a href="histo.html">History</a></li>
+                <li><a href="appli.html">Applications</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h3>History</h3>
+            <p>The history of pharmacology can be traced back to ancient civilizations. Ancient texts from Egypt, China, India, and Greece contain information on medicinal plants and practices. Modern pharmacology began in the 19th century with advances in chemistry and physiology.</p>
+        </section>
+    </main>
+
+    <div class="card-container">
+        <div class="card expand-card">
+            <img src="history1.jpg" alt="Image 1" class="card-img">
+            <div class="card-content">
+                <h3>Egyptians</h3>
+                <p>Pharmacology, the study of drugs and their effects on living organisms, has a rich and multifaceted history dating back to ancient civilizations. One of the earliest recorded instances of pharmacological knowledge comes from ancient Mesopotamia and Egypt, where medicinal plants were used for various ailments. Ancient Greek and Roman physicians further advanced pharmacology through the systematic study of medicinal plants and the development of rudimentary pharmaceutical preparations</p>
+            </div>
+        </div>
+        <div class="card expand-card">
+            <img src="history2.jpg" alt="Image 2" class="card-img">
+            <div class="card-content">
+                <h3>Islamic Scholars</h3>
+                <p>During the Middle Ages, Islamic scholars made significant contributions to pharmacology by translating and synthesizing ancient Greek and Roman texts. The renowned Persian polymath Avicenna wrote extensively on pharmacology in his seminal work "The Canon of Medicine," which became a standard medical textbook in Europe for centuries. However, it was not until the Renaissance that pharmacology began to evolve into a distinct scientific discipline, with scholars like Paracelsus advocating for the use of chemical remedies and challenging traditional humoral theories of medicine.</p>
+            </div>
+        </div>
+        <div class="card expand-card">
+            <img src="history3.jpg" alt="Image 3" class="card-img">
+            <div class="card-content">
+                <h3>Modern Era</h3>
+                <p>The modern era of pharmacology began in the 19th century with the isolation and synthesis of pure chemical compounds from medicinal plants. This period saw the development of pharmacological laboratories and the establishment of pharmacopeias to standardize drug production and usage. The 20th century witnessed unprecedented advancements in pharmacology, including the discovery of antibiotics, psychotropic drugs, and the rise of pharmacogenetics. Today, pharmacology continues to play a crucial role in healthcare, with ongoing research focusing on personalized medicine, drug safety, and the development of novel therapeutics to combat emerging diseases.</p>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+    
+</body>
+
+<style>
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--transition-duration);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.expand-card {
+    overflow: hidden;
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.expand-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.expand-card .card-img {
+    width: 100%;
+    height: 500px; 
+    object-fit: cover;
+}
+
+.expand-card .card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card p {
+    margin: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: rgb(9, 113, 113);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 0.5em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 2em;
+    background-color: white;
+    max-width: 100%;
+}

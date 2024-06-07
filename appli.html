@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications of Pharmacology</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Pharmacology</h1>
+        <h2>Applications</h2>
+        <nav>
+            <ul>
+                <li><a href="signup.html">Sign-Up</a></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="intro.html">Introduction</a></li>
+                <li><a href="histo.html">History</a></li>
+                <li><a href="appli.html">Applications</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h3>Applications</h3>
+            <p>Pharmacology has many applications, including the development of new medications, understanding drug interactions, and improving therapeutic strategies. It is crucial for advancing medical science and improving patient care.</p>
+        </section>
+    </main>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="application1DrugDevelopment.webp" alt="Image 1">
+            <div class="card-content">
+                <h3>Drug development</h3>
+                <p>Pharmacology is fundamental in the process of discovering and developing new drugs. It involves the identification of new drug targets, the design and synthesis of new compounds, and the testing of these compounds for efficacy and safety in preclinical and clinical trials. This application is crucial for the advancement of medical treatments for various diseases.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="application2.jpg" alt="Image 2">
+            <div class="card-content">
+                <h3>Clinical pharmacology </h3>
+                <p>This application focuses on the use of drugs in the treatment of diseases in humans. It includes the study of drug actions in patients, the optimization of drug therapy, the evaluation of drug efficacy and safety in clinical settings, and the management of drug interactions and side effects. Clinical pharmacologists work to ensure that medications are used effectively and safely to improve patient outcomes.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="application3.jpg" alt="Image 3">
+            <div class="card-content">
+                <h3>Toxicology</h3>
+                <p>Toxicology, a sub-discipline of pharmacology, deals with the study of the adverse effects of chemicals, including drugs, on living organisms. It involves the assessment of the toxicity of substances, the mechanisms of toxic action, the dose-response relationship, and the identification of safe exposure levels. Toxicologists play a key role in ensuring the safety of pharmaceuticals, environmental chemicals, and other substances.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --background-color: #743434;
+    --card-width: 300px;
+    --card-height: 400px;
+    --border-radius: 10px;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover; 
+}
+
+header {
+    background-color: rgb(9, 113, 113);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 0.5em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 2em;
+    max-width: 1000px;
+    margin: 2em auto;
+    color: var(--text-color);
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h3 {
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1em;
+    padding: 1em;
+    scroll-snap-type: x mandatory;
+}
+
+.card-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.card-container {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+
+
+.card {
+    flex: 0 0 var(--card-width);
+    min-height: 500px; /* Increase the minimum height of the card */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1em;
+}
+
+.card h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.card p {
+    color: var(--text-color);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.5em 0;
+    }
+
+    header nav {
+        position: static;
+        margin-top: 0.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    nav ul li a {
+        padding: 0.5em 1em;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    .card {
+        flex: 0 0 100%;
+        height: auto;
+    }
+}
+</style>
+</html>

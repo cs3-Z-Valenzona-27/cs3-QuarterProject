@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up for our pharmacology course.">
+    <title>Sign-Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Pharmacology</h1>
+        <h2>Sign-Up</h2>
+    </header>
+    <main>      
+        <section>
+            <fieldset>
+                <legend>Sign-Up</legend>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+
+                <label for="preferredUsername">Preferred Username:</label><br>
+                <input type="text" id="preferredUsername" name="preferredUsername"><br>
+
+                <label for="pwd">Password:</label><br>
+                <input type="password" id="pwd" name="pwd"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="gender">Gender:</label><br>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="preferNotToMention">Prefer not to mention</option>
+                </select><br>
+
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address"></textarea><br>
+                <label for="interests">Interests (short paragraph):</label><br>
+                <textarea id="interests" name="interests"></textarea><br>
+                <input type="button" value="Sign Up" id="signUpBtn">
+                <input type="button" value="Log In" id="logInBtn">
+            </fieldset>
+        </section>
+        <section>
+            <div id="submittedInfo"></div>
+        </section>
+    </main>
+</body>
+
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url('wallpaperflare.com_wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color: rgb(9, 113, 113);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 0.5em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    margin: 2em auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h3 {
+    color: #4CAF50;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: none;
+    color: #333;
+}
+
+legend {
+    padding: 0px 10px;
+    color: #000;
+    background-color: #4CAF50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="button"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+</style>
+
+<script>
+
+document.getElementById("signUpBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const preferredUsername = document.getElementById("preferredUsername").value;
+    const password = document.getElementById("pwd").value;
+    const email = document.getElementById("email").value;
+    const gender = document.getElementById("gender").value;
+    const address = document.getElementById("address").value;
+    const interests = document.getElementById("interests").value;
+
+    if (!name || !preferredUsername || !password || !email || !gender || !address || !interests) {
+        alert("Please fill out all fields");
+        return;
+    }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    if (users.some(user => user.preferredUsername === preferredUsername)) {
+        alert("Username already exists");
+        return;
+    }
+
+    users.push({ name, preferredUsername, password, email, gender, address, interests });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("User registered successfully");
+});
+
+document.getElementById("logInBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const preferredUsername = document.getElementById("preferredUsername").value;
+    const password = document.getElementById("pwd").value;
+
+    if (!preferredUsername || !password) {
+        alert("Please enter username and password");
+        return;
+    }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const user = users.find(user => user.preferredUsername === preferredUsername && user.password === password);
+
+    if (user) {
+        alert("Login successful");
+        window.location.href = "homepage.html";
+    } else {
+        alert("Invalid credentials");
+    }
+});
+
+
+</script>
+</html>
